@@ -1,5 +1,12 @@
 <template>
   <div id="page" class="container">
+    <div class="loading">
+      <v-progress-circular
+        indeterminate
+        color="primary"
+      ></v-progress-circular>
+    </div>
+    
     <div id="header">
       <div id="logo">
         <img src="images/pic02.jpg" alt="" />
@@ -19,3 +26,33 @@
     <router-view/>
   </div>
 </template>
+<style scoped>
+  @keyframes fadein {
+    0% {opacity: 1;}
+    100% {
+      opacity: 0;
+      display: none;
+      z-index: -10;
+    }
+  }
+  .loading{
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    left: 0;
+    text-align: center;
+    line-height: 50;
+  }
+  .close{
+    animation: fadein 2s both;
+  }
+</style>
+
+<script>
+
+export default {
+
+}
+</script>
