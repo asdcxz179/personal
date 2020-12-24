@@ -9,17 +9,37 @@
     
     <div id="header">
       <div id="logo">
-        <img src="images/pic02.jpg" alt="" />
-        <h1><a href="#">Privy</a></h1>
-        <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+        <img 
+          :src="$root.avatar"
+          alt="" />
+        <h1><a href="#" >{{$root.personal_name}}</a></h1>
       </div>
       <div id="menu">
         <ul>
-          <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-          <li><a href="#" accesskey="2" title="">Our Clients</a></li>
-          <li><a href="#" accesskey="3" title="">About Us</a></li>
-          <li><a href="#" accesskey="4" title="">Careers</a></li>
-          <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+          <router-link
+              to="/"
+              v-slot="{ href,isExactActive }"
+            >
+            <li :class="[isExactActive && 'current_page_item']">
+              <a :href="href" >首頁</a>
+            </li>
+          </router-link>
+          <router-link
+              to="/Work"
+              v-slot="{ href,isExactActive }"
+            >
+            <li :class="[isExactActive && 'current_page_item']">
+              <a :href="href" >作品專區</a>
+            </li>
+          </router-link>
+          <router-link
+              to="/Contact"
+              v-slot="{ href,isExactActive }"
+            >
+            <li :class="[isExactActive && 'current_page_item']">
+              <a :href="href" >聯絡我</a>
+            </li>
+          </router-link>
         </ul>
       </div>
     </div>
@@ -47,6 +67,10 @@
   }
   .close{
     animation: fadein 2s both;
+  }
+  #logo img{
+    width:80px;
+    height:80px;
   }
 </style>
 

@@ -22,6 +22,8 @@ new Vue({
   data: () => ({
     title:"",
     ico:"",
+    avatar:"http://localhost:8081/images/pic02.jpg",
+    personal_name:"Privy",
   }),
   created:function(){
     this.Init();
@@ -43,6 +45,8 @@ new Vue({
       this.$axios.get('/WebInfo').then((res)=>{
         this.title  = res.data.web_name;
         this.ico  = res.data.web_ico;
+        this.avatar  = res.data.avatar;
+        this.personal_name 	= res.data.personal_name;
       });
     },
   },
