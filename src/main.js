@@ -24,6 +24,8 @@ new Vue({
     ico:"",
     avatar:"http://localhost:8081/images/pic02.jpg",
     personal_name:"Privy",
+    webs:[],
+    works:[],
   }),
   created:function(){
     this.Init();
@@ -39,7 +41,8 @@ new Vue({
   methods:{
     async Init(){
       await this.GetWebInfo();
-      document.querySelector('.loading').classList.add('close');
+      await document.querySelector('.loading').classList.add('close');
+      await this.GetExperience();
     },
     GetWebInfo(){
       this.$axios.get('/WebInfo').then((res)=>{
@@ -47,6 +50,11 @@ new Vue({
         this.ico  = res.data.web_ico;
         this.avatar  = res.data.avatar;
         this.personal_name 	= res.data.personal_name;
+      });
+    },
+    GetExperience(){
+      this.$axios.get('/Experience').then((res)=>{
+		this.works 	=	res.data
       });
     },
   },
