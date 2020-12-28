@@ -43,6 +43,7 @@ new Vue({
       await this.GetWebInfo();
       await document.querySelector('.loading').classList.add('close');
       await this.GetExperience();
+      await this.GetWebContent();
     },
     GetWebInfo(){
       this.$axios.get('/WebInfo').then((res)=>{
@@ -55,6 +56,11 @@ new Vue({
     GetExperience(){
       this.$axios.get('/Experience').then((res)=>{
 		this.works 	=	res.data
+      });
+    },
+    GetWebContent(){
+      this.$axios.get('/WebContent').then((res)=>{
+		this.webs 	=	res.data
       });
     },
   },
