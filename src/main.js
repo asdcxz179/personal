@@ -24,7 +24,17 @@ new Vue({
     ico:"",
     avatar:"http://localhost:8081/images/pic02.jpg",
     personal_name:"Privy",
-    webs:[],
+    webs:{
+		home_page:{
+			page_content:""
+		},
+		work_page:{
+			page_content:""
+		},
+		contact_page:{
+			page_content:""
+		},
+	},
     works:[],
   }),
   created:function(){
@@ -41,9 +51,9 @@ new Vue({
   methods:{
     async Init(){
       await this.GetWebInfo();
-      await document.querySelector('.loading').classList.add('close');
       await this.GetExperience();
       await this.GetWebContent();
+      await document.querySelector('.loading').classList.add('close');
     },
     GetWebInfo(){
       this.$axios.get('/WebInfo').then((res)=>{

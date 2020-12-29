@@ -72,6 +72,9 @@
     width:80px;
     height:80px;
   }
+  #main{
+    width:900px
+  }
 </style>
 
 <script>
