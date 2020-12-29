@@ -15,7 +15,7 @@
 					<p class="date">
 						<a href="#">
 							{{work.job_start_date}}
-							{{ (work.job_end_date!=null)?work.job_end_date:"在職" }}
+							{{ (work.job_end_date!=null)?work.job_end_date:"" }}
 						</a>
 					</p>
 					<h3>{{work.job_company}} - {{work.job_title}}</h3>
