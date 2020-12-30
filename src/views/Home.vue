@@ -19,7 +19,7 @@
 						</a>
 					</p>
 					<h3>{{work.job_company}} - {{work.job_title}}</h3>
-					<p>{{work.job_content}}</p>
+					<p v-html="work.job_content"></p>
 				</li>
 			</ul>
 		</div>
