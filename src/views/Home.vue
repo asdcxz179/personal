@@ -12,14 +12,19 @@
 					v-for="(work,index) in $root.works"
 					:key="index"
 				>
-					<p class="date">
-						<a href="#">
-							{{work.job_start_date}}
-							{{ (work.job_end_date!=null)?work.job_end_date:"" }}
-						</a>
-					</p>
-					<h3>{{work.job_company}} - {{work.job_title}}</h3>
-					<p v-html="work.job_content"></p>
+					<div class="left">
+						<p class="date">
+							<a href="#">
+								{{work.job_start_date}}
+								{{ (work.job_end_date!=null)?work.job_end_date:"" }}
+							</a>
+						</p>	
+					</div>
+					
+					<div class="content">
+						<h3>{{work.job_company}} - {{work.job_title}}</h3>
+						<p v-html="work.job_content"></p>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -29,6 +34,15 @@
 		</div>
 	</div>
 </template>
+<style scoped>
+	ul.style1 .date{
+		float: unset;
+		height: 100%;
+	}
+	.first{
+		display: flex;
+	}
+</style>
 
 <script>
 // @ is an alias to /src
