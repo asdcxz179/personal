@@ -5,6 +5,8 @@ module.exports = {
   publicPath:process.env.NODE_ENV === 'production'
     ? '/personal/'
     : '/',
+  indexPath:'../../resources/views/front.blade.php',
+  outputDir:'../admin/public/personal',
   devServer:{
   	proxy:{
   		'/':{
