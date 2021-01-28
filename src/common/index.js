@@ -7,10 +7,11 @@ import VueI18n from 'vue-i18n'
 Vue.use(VueSweetalert2)
 
 const common = {};
-
+Vue.use(VueI18n);
 common.i18n = new VueI18n();
 
 common.AxiosHandle = function (data){
+	console.log(data);
 	var swal_settings 	=	{
 		heightAuto:false,
 	};
